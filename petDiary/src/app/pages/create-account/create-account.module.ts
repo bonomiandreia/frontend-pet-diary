@@ -1,17 +1,15 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Routes, RouterModule } from '@angular/router';
 
-import { CreateAccountRoutingModule } from './create-account-routing.module';
 import { CreateAccountComponent } from './create-account.component';
 
-
+export const ROUTES: Routes = [
+  { path: '', component: CreateAccountComponent }
+];
 @NgModule({
-  declarations: [
-    CreateAccountComponent
-  ],
-  imports: [
-    CommonModule,
-    CreateAccountRoutingModule
-  ]
+  imports: [RouterModule.forChild(ROUTES)],
+
+exports: [RouterModule],
 })
-export class CreateAccountModule { }
+export class CreatePageRoutingModule { }
+

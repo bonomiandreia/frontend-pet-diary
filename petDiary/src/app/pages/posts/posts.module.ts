@@ -1,17 +1,14 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-import { PostsRoutingModule } from './posts-routing.module';
+import { RouterModule, Routes } from '@angular/router';
 import { PostsComponent } from './posts.component';
 
+export const ROUTES: Routes = [
+  { path: '', component: PostsComponent }
+];
 
 @NgModule({
-  declarations: [
-    PostsComponent
-  ],
-  imports: [
-    CommonModule,
-    PostsRoutingModule
-  ]
+  imports: [RouterModule.forChild(ROUTES)],
+
+exports: [RouterModule],
 })
-export class PostsModule { }
+export class PostsPageRoutingModule { }
