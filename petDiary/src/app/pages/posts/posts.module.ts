@@ -1,14 +1,25 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { PostsComponent } from './posts.component';
 
-export const ROUTES: Routes = [
-  { path: '', component: PostsComponent }
-];
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatTableModule } from '@angular/material/table';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { PostsComponent } from './posts.component';
+import { PostsPageRoutingModule } from './posts-routing.module';
 
 @NgModule({
-  imports: [RouterModule.forChild(ROUTES)],
-
-exports: [RouterModule],
+    imports: [
+        CommonModule,
+        MatTableModule,
+        MatCardModule,
+        MatGridListModule,
+        ReactiveFormsModule,
+        PostsPageRoutingModule,
+    ],
+    declarations: [
+      PostsComponent,
+    ],
+    exports: [PostsComponent],
 })
-export class PostsPageRoutingModule { }
+export class LoginAccountModule {}

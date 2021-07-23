@@ -1,16 +1,25 @@
-import { NgModule } from '@angular/core';
+
 import { CommonModule } from '@angular/common';
-import { Routes, RouterModule } from '@angular/router';
-
-import { LoginRoutingModule } from './login-routing.module';
+import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatTableModule } from '@angular/material/table';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { LoginComponent } from './login.component';
+import { LoginPageRoutingModule } from './login-routing.module';
 
-export const ROUTES: Routes = [
-  { path: '', component: LoginComponent }
-];
 @NgModule({
-  imports: [RouterModule.forChild(ROUTES)],
-
-exports: [RouterModule],
+    imports: [
+      CommonModule,
+        MatTableModule,
+        MatCardModule,
+        MatGridListModule,
+        ReactiveFormsModule,
+        LoginPageRoutingModule,
+    ],
+    declarations: [
+      LoginComponent,
+    ],
+    exports: [LoginComponent],
 })
-export class LoginPageRoutingModule { }
+export class LoginAccountModule {}

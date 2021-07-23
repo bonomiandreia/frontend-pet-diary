@@ -2,3 +2,14 @@
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+
+
+.background-paws {
+    background-image: url('/assets/background.png');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
