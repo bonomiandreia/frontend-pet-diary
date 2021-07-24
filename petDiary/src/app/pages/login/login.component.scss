@@ -7,13 +7,8 @@
     vertical-align: middle;
 
     &__title {
-        top: 40%;
-        color: white;
-        font-weight: bold;
-        transform: translateY(-40%);
+        
         position: absolute;
-        font-size: 2em;
-
     } 
 
 
@@ -22,22 +17,32 @@
         position: absolute;
         background: white;
         width: 100%;
-        max-width: 500px;
+        max-width: 460px;
         border-radius: 15px;
         top: 50%;
         -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
+        width: 90%;
+        margin: 0 auto;
+        justify-content: center;
+        text-align: center;
+        height: 370px;
 
         &__title-second {
-            text-align: center
+            color: #434343;
+            font-size: 1.2em;
+            font-weight: bold;
         } 
 
         &__box-form {
-            width: 90%;
+            width: 400px;
+            max-width: 100%;
+            height: auto;
             margin: 0 auto;
-            background: pink;
-            justify-content: center;
+            padding: 1em;
+            position: relative;
+            
         } 
     
         &__background-gray {
@@ -45,6 +50,20 @@
             border-radius: 0.8em;
             border: 0;
             height: 2.5em;
+        } 
+
+        &__button-form {
+            background-color : #1F9EBC; 
+            border-radius: 0.8em;
+            border: 0;
+            height: 2.5em;
+
+        } 
+
+        &__button-link {
+            color : #1F9EBC; 
+            text-underline-position: under;
+
         } 
         
 
