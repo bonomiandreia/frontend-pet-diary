@@ -13,3 +13,23 @@
     width: 100vw;
     height: 100vh;
 }
+
+.title-pet-diary {
+    position: absolute;
+    color: white;
+    font-size: 2em;
+    display : flex;
+    align-items : center;
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    top: 5%;
+}
+
+.title-responsive {
+    display: table;
+    height: 100px;
+}
+
+
