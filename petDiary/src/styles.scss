@@ -4,7 +4,7 @@
 @import '~bootstrap/scss/bootstrap';
 
 
-.material-icons{
+.material-icons {
     font-family: 'Material Icons' !important;
 }
 
@@ -41,6 +41,10 @@
     @media screen and (max-width: 768px) {
         height: 25%;
     }
+}
+
+.background-form {
+    background-color : #E2E2E2; 
 }
 
 .c-form {
@@ -85,8 +89,7 @@
             
         } 
     
-        &__background-gray {
-            background-color : #E2E2E2; 
+        &__background-form {
             border-radius: 0.8em;
             border: 0;
             height: 2.5em;

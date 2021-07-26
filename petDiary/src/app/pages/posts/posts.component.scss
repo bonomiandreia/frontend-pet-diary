@@ -1,4 +1,9 @@
 .c-posts {
     background-color: #F4F4F4;
-    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.15);
+    box-shadow: 5px 5px 15px 5px rgb(117 115 115 / 15%);
+
+    &__write-here {
+        
+        background-color: white;
+    } 
 }
