@@ -9,10 +9,11 @@ import { PostsComponent } from './posts.component';
 import { HeaderComponent } from '../../components/header/header.component';
 import { PostsPageRoutingModule } from './posts-routing.module';
 import { MatIconModule } from '@angular/material/icon'
+import { PostsTableComponent } from '../../components/posts-table/posts-table.component';
 
 @NgModule({
     imports: [
-        CommonModule,
+    CommonModule,
         MatTableModule,
         MatCardModule,
         MatGridListModule,
@@ -23,6 +24,7 @@ import { MatIconModule } from '@angular/material/icon'
     declarations: [
       PostsComponent,
       HeaderComponent,
+      PostsTableComponent,
     ],
     exports: [PostsComponent,
       MatIconModule],
