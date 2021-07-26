@@ -18,18 +18,25 @@
     position: absolute;
     color: white;
     font-size: 2em;
-    display : flex;
-    align-items : center;
+    display: flex;
     height: 100px;
     width: 100%;
     text-align: center;
     justify-content: center;
-    top: 5%;
+    bottom: 0;
 }
 
 .title-responsive {
     display: table;
-    height: 100px;
+    height: 35%;
+    width: 100%;
+    align-items: end;
+    justify-items: end;
+    position: absolute;
+
+    @media screen and (max-width: 768px) {
+        height: 25%;
+    }
 }
 
 .c-form {
