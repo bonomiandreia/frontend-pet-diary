@@ -43,10 +43,15 @@
     }
 }
 
-.background-form {
+.background-color {
     background-color : #E2E2E2; 
 }
 
+.background-form {
+    border-radius: 0.8em;
+    border: 0;
+    height: 2.5em;
+}
 .c-form {
     display: flex;
     height: 100%;
@@ -88,12 +93,7 @@
             position: relative;
             
         } 
-    
-        &__background-form {
-            border-radius: 0.8em;
-            border: 0;
-            height: 2.5em;
-        } 
+
 
         &__button-form {
             background-color : #1F9EBC; 
