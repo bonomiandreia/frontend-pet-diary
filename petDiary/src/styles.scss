@@ -4,6 +4,10 @@
 @import '~bootstrap/scss/bootstrap';
 
 
+.material-icons{
+    font-family: 'Material Icons' !important;
+}
+
 .background-paws {
     background-image: url('/assets/background.png');
     -webkit-background-size: cover;

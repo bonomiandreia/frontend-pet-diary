@@ -6,7 +6,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { PostsComponent } from './posts.component';
+import { HeaderComponent } from '../../components/header/header.component';
 import { PostsPageRoutingModule } from './posts-routing.module';
+import { MatIconModule } from '@angular/material/icon'
 
 @NgModule({
     imports: [
@@ -16,10 +18,13 @@ import { PostsPageRoutingModule } from './posts-routing.module';
         MatGridListModule,
         ReactiveFormsModule,
         PostsPageRoutingModule,
+        MatIconModule,
     ],
     declarations: [
       PostsComponent,
+      HeaderComponent,
     ],
-    exports: [PostsComponent],
+    exports: [PostsComponent,
+      MatIconModule],
 })
 export class LoginAccountModule {}
