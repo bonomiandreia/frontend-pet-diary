@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  displayCssFor(field: string|Array<string>) {
+  displayCssFor(field: string) {
     return (this.form.get(field)?.invalid && (this.form.get(field)?.touched || this.form.get(field)?.dirty) ) ? 'border border-danger' : '';
   }
 
