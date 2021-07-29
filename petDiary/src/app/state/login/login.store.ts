@@ -1,12 +1,24 @@
 import { Injectable } from '@angular/core';
 import { Store, StoreConfig } from '@datorama/akita';
-import { LoginState } from '../store/login.model';
+export interface LoginState {
+  auth: {
+    _id: string;
+    email: string;
+  }
+  token: string
 
+}
 /**
  * Create initial state
  */
 export function createInitialState(): LoginState {
-  return { };
+  return { 
+    auth: {
+      _id: '',
+    email: '',
+    },
+    token: ''
+  };
 }
 
 /**

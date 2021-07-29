@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Query } from '@datorama/akita';
-import { LoginStore } from '../store/login.store';
-import { LoginState } from '../store/login.model';
+import { Observable } from 'rxjs';
+import { LoginState, LoginStore } from './login.store';
 
 /**
  * Login query
@@ -13,7 +13,17 @@ import { LoginState } from '../store/login.model';
 @Injectable({ providedIn: 'root' })
 export class LoginQuery extends Query<LoginState> {
 
+  readonly isLogged$: Observable<boolean>;
+  readonly token$: Observable<string>;
+  readonly idUser$: Observable<string>;
+  readonly email$: Observable<string>;
+
   constructor(protected store: LoginStore) {
     super(store);
+
+    this.isLogged$ = this.select(state => !!state.token);
+    this.token$ = this.select(state => state.token);
+    this.idUser$ = this.select(state => state.auth._id);
+    this.email$ = this.select(state => state.auth.email);
   }
 }
