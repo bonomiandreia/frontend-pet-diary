@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostsTableComponent implements OnInit {
 
-  constructor() { }
+  items: any;
+
+  constructor() { 
+    this.items = [{id:'String Elemento'}, {id:'String Elemento'}]
+  }
 
   ngOnInit(): void {
   }
