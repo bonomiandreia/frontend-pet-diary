@@ -51,6 +51,10 @@
     background-color: #A3CCD6;
 }
 
+input:focus {
+    outline:none;
+}
+
 .background-form {
     border-radius: 0.8em;
     border: 0;
