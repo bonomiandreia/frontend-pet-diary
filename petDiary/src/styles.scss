@@ -47,6 +47,10 @@
     background-color : #E2E2E2; 
 }
 
+.btn.btn-primary[disabled] {
+    background-color: #A3CCD6;
+}
+
 .background-form {
     border-radius: 0.8em;
     border: 0;
