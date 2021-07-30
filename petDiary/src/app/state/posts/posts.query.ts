@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Query } from '@datorama/akita';
-import { PostsStore } from '../store/posts.store';
-import { PostsState } from '../store/posts.model';
+import { Observable } from 'rxjs';
+import { PostsStore, PostsState } from './posts.store';
+import { Posts } from '../../models/posts.list.model';
+
 
 /**
  * Posts query
@@ -13,7 +15,10 @@ import { PostsState } from '../store/posts.model';
 @Injectable({ providedIn: 'root' })
 export class PostsQuery extends Query<PostsState> {
 
+  readonly posts$: Observable<Posts[]>;
+
   constructor(protected store: PostsStore) {
     super(store);
+    this.posts$ = this.select(state => state.data);
   }
 }

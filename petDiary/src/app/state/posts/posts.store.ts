@@ -1,12 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Store, StoreConfig } from '@datorama/akita';
-import { PostsState } from '../store/posts.model';
+import { Posts } from '../../models/posts.list.model';
+
+
+export interface PostsState {
+  data: Posts[];
+}
 
 /**
  * Create initial state
  */
 export function createInitialState(): PostsState {
-  return { };
+  return {
+    data: [],
+  }
 }
 
 /**
@@ -17,10 +24,14 @@ export function createInitialState(): PostsState {
  * @extends {Store<PostsState>}
  */
 @Injectable({ providedIn: 'root' })
-@StoreConfig({ name: 'posts' })
+@StoreConfig({ name: 'posts', resettable: true })
 export class PostsStore extends Store<PostsState> {
 
   constructor() {
     super(createInitialState());
+  }
+
+  setPosts(data: Posts[]): void {
+    this.update({ data });
   }
 }

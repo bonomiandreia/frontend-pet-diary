@@ -4,6 +4,6 @@
         <div class="row ms-3 me-3">
             <input class="background-form mt-3" placeholder="Write about your pet here..."/>
         </div>
-        <app-posts-table></app-posts-table>
+        <app-posts-table [list]="posts$ | async"></app-posts-table>
     </mat-card>
 </div>

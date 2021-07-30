@@ -1,7 +1,7 @@
-<div *ngFor="let item of items">
+<div *ngFor="let item of list">
     <div class="row ms-3 me-3 mt-3">
         <div class="col-6 border-bottom border-secondary">
-            <p class="h3"> 00/00</p>
+            <p class="h3"> {{ item.date }}</p>
         </div>
         <div class="col-6 ps-0 pe-0 border-bottom border-secondary">
             <div class="float-end h3">
@@ -10,11 +10,7 @@
     </div>  
     <div class="row mt-2">
         <div class="col-12">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consectetur ultricies nunc at aliquet. Sed non sem magna. Pellentesque maximus massa et neque accumsan, non blandit sapien fringilla. Phasellus in neque volutpat, venenatis metus non, fermentum libero. Duis facilisis nibh non commodo lacinia. Quisque sit amet condimentum magna, ut aliquam leo. Etiam ultrices vehicula aliquam.
-
-            Sed in vestibulum odio. Aliquam quis nulla et eros sagittis fringilla. Nunc nec ipsum hendrerit, facilisis est a, sollicitudin metus. Vestibulum purus arcu, molestie eu vulputate vitae, egestas quis nunc. Phasellus lacinia lorem consequat enim lobortis placerat. Quisque fermentum felis a est fringilla facilisis. Donec vitae neque dignissim mauris laoreet interdum. Nam id maximus purus. Sed dapibus, magna quis ultricies congue, dui massa viverra nunc, nec condimentum erat libero eget libero. Integer ornare et tellus ac aliquet.
-
-            Ut in dignissim ipsum. Fusce vel iaculis justo, vel tristique sapien. Sed vitae ultricies massa. Vestibulum felis risus, varius in justo sed, pretium blandit lacus. Nunc molestie quis dui id lacinia. Aenean vel mauris eros. Aliquam nec nibh lacus.
+            {{ item.text }}
         </div>
     </div>
 </div>

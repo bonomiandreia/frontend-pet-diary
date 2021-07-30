@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Posts } from '../../models/posts.list.model';
 
 @Component({
   selector: 'app-posts-table',
@@ -7,13 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostsTableComponent implements OnInit {
 
-  items: any;
+  constructor() {}
 
-  constructor() { 
-    this.items = [{id:'String Elemento'}, {id:'String Elemento'}]
-  }
+  @Input() list: any;
 
   ngOnInit(): void {
+    console.log(this.list)
   }
 
 }

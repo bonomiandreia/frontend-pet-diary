@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
-import { PostsStore } from '../store/posts.store';
+import { PostsStore, PostsState } from './posts.store';
+import { Posts } from '../../models/posts.list.model';
+import { environment } from '../../../environments/environment';
+import { HttpClient } from '@angular/common/http';
 
 /**
  * Posts service
@@ -10,5 +13,15 @@ import { PostsStore } from '../store/posts.store';
 @Injectable({ providedIn: 'root' })
 export class PostsService {
 
-  constructor(private postsStore: PostsStore) { }
+  constructor(private postsStore: PostsStore, private http: HttpClient) { }
+
+  setPosts(data: Posts[]): void {
+    this.postsStore.setPosts(data)
+  }
+
+  getPostsById(idUser: string) {
+    this.http.get<Posts[]>(`${environment.url}posts/${idUser}`).subscribe((data: Posts[]) => {
+      this.setPosts(data);
+    })
+  }
 }
