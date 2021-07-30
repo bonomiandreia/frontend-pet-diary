@@ -18,8 +18,6 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.compose([Validators.required])],
     });
 
-    
-    
    }
 
   ngOnInit(): void {}

@@ -4,6 +4,7 @@ import { LoginResponse } from '../../models/login-response.model';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { Login } from '../../models/login.model';
+import { Router } from '@angular/router';
 
 /**
  * Login service
@@ -14,7 +15,7 @@ import { Login } from '../../models/login.model';
 @Injectable({ providedIn: 'root' })
 export class LoginService {
 
-  constructor(private loginStore: LoginStore, private http: HttpClient ) { }
+  constructor(private loginStore: LoginStore, private http: HttpClient, private router: Router) { }
 
   setLogin(data: LoginState): void {
     this.loginStore.update(data);
@@ -26,8 +27,12 @@ export class LoginService {
 
   login(body: Login): void {
     this.http.post<LoginResponse>(`${environment.url}users/auth`, body).subscribe((data: LoginResponse) => {
-      this.setLogin(data)
+      this.setLogin(data);
+      this.router.navigate(['/posts']);
+    }, error => {
+      return error.error;
     })
+    
   }
 
   logout(): void {
