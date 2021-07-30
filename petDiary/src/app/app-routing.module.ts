@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuardService as AuthGuard } from './auth/auth.service';
 
 export const ROUTES: Routes = [
   { path: 'login', loadChildren: () => import('./pages/login/login.module').then(module => module.LoginAccountModule)},
@@ -7,8 +8,9 @@ export const ROUTES: Routes = [
   { 
     path: 'posts', 
     loadChildren: () => import('./pages/posts/posts.module').then(module => module.LoginAccountModule),
+    canLoad: [AuthGuard] 
   },
-  { path: '', redirectTo: 'login', pathMatch: 'full' }
+  { path: '**', redirectTo: '/login' },
 ];
 
 @NgModule({

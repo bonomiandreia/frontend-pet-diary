@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TokenInterceptor } from './interceptor/token-interceptor';
+import { AuthGuardService } from './auth/auth.service';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { TokenInterceptor } from './interceptor/token-interceptor';
     
   ],
   providers: [
+    AuthGuardService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
