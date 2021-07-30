@@ -29,7 +29,7 @@ export function createInitialState(): LoginState {
  * @extends {Store<LoginState>}
  */
 @Injectable({ providedIn: 'root' })
-@StoreConfig({ name: 'login' })
+@StoreConfig({ name: 'login', resettable: true })
 export class LoginStore extends Store<LoginState> {
 
   constructor() {

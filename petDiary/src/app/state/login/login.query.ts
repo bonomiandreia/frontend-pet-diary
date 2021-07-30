@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Query } from '@datorama/akita';
+import { Query, StoreConfig } from '@datorama/akita';
 import { Observable } from 'rxjs';
 import { LoginState, LoginStore } from './login.store';
 
@@ -11,6 +11,7 @@ import { LoginState, LoginStore } from './login.store';
  * @extends {Query<LoginState>}
  */
 @Injectable({ providedIn: 'root' })
+@StoreConfig({ name: 'login', resettable: true })
 export class LoginQuery extends Query<LoginState> {
 
   readonly isLogged$: Observable<boolean>;

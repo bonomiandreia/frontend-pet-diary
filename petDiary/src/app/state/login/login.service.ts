@@ -20,9 +20,17 @@ export class LoginService {
     this.loginStore.update(data);
   }
 
+  deleteLogin(): void {
+    this.loginStore.reset();
+  }
+
   login(body: Login): void {
     this.http.post<LoginResponse>(`${environment.url}users/auth`, body).subscribe((data: LoginResponse) => {
       this.setLogin(data)
     })
+  }
+
+  logout(): void {
+    this.deleteLogin();
   }
 }
