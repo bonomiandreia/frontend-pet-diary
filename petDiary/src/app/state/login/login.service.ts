@@ -26,7 +26,7 @@ export class LoginService {
   }
 
   login(body: Login): void {
-    this.http.post<LoginResponse>(`${environment.url}users/auth`, body).subscribe((data: LoginResponse) => {
+    this.http.post<LoginResponse>(`${environment.url}users/auth`, {...body, ignore_interceptor: true } ).subscribe((data: LoginResponse) => {
       this.setLogin(data);
       this.router.navigate(['/posts']);
     }, error => {

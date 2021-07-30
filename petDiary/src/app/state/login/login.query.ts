@@ -11,7 +11,6 @@ import { LoginState, LoginStore } from './login.store';
  * @extends {Query<LoginState>}
  */
 @Injectable({ providedIn: 'root' })
-@StoreConfig({ name: 'login', resettable: true })
 export class LoginQuery extends Query<LoginState> {
 
   readonly isLogged$: Observable<boolean>;

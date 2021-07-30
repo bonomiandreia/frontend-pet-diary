@@ -17,6 +17,12 @@ export class TokenInterceptor implements HttpInterceptor {
   }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    const ignoreInterceptor = request?.body?.ignore_interceptor ? request?.body?.ignore_interceptor : false;
+
+    if ((request?.body && ignoreInterceptor) || request?.url.includes('.svg')) {
+        return next.handle(request);
+    }
+
     return this.token$.pipe(
       switchMap(token => {
           let headers = request.headers;
