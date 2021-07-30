@@ -17,10 +17,12 @@ export class LoginComponent implements OnInit {
       email: ['', Validators.compose([Validators.email, Validators.required])],
       password: ['', Validators.compose([Validators.required])],
     });
+
+    
+    
    }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   displayCssFor(field: string): string {
     return (this.form.get(field)?.invalid && (this.form.get(field)?.touched || this.form.get(field)?.dirty) ) ? 'border border-danger' : '';

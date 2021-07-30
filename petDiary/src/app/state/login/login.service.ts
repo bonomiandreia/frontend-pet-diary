@@ -22,7 +22,7 @@ export class LoginService {
 
   login(body: Login): void {
     this.http.post<LoginResponse>(`${environment.url}users/auth`, body).subscribe((data: LoginResponse) => {
-      this.loginStore.update(data)
+      this.setLogin(data)
     })
   }
 }

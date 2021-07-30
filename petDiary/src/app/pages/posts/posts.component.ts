@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginQuery } from '../../state/login/login.query';
 
 @Component({
   selector: 'app-posts',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostsComponent implements OnInit {
 
-  constructor() { }
+  id: string;
 
-  ngOnInit(): void {
+  constructor(private query: LoginQuery) { 
+    this.id = this.query.getValue().auth._id;
   }
+
+  ngOnInit(): void {}
 
 }

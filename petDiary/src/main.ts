@@ -1,5 +1,7 @@
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { persistState } from '@datorama/akita';
+import { throwError } from 'rxjs';
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
@@ -8,5 +10,10 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+const providers = [{ provide: 'auth', useValue: persistState() }];
+
+
+platformBrowserDynamic(providers)
+    .bootstrapModule(AppModule)
+    .catch(err => throwError(err));
+
