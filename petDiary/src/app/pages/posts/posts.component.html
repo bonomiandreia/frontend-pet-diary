@@ -4,6 +4,14 @@
         <div class="row ms-3 me-3" (click)="openDialogPosts()" >
             <input class="background-form mt-3" placeholder="Write about your pet here..."/>
         </div>
-        <app-posts-table [list]="posts$ | async"></app-posts-table>
+        <app-posts-table 
+        [list]="posts$ | async"
+        *ngIf="(posts$| async)?.length > 0; else noPosts"
+        >
+        </app-posts-table>
+        <ng-template #noPosts>
+         <div class="text-center mt-3">Oh no! you don't have any posts yet!</div>
+        </ng-template>
     </mat-card>
 </div>
+
