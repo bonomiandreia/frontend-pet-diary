@@ -46,10 +46,15 @@
     align-items: end;
     justify-items: end;
     position: absolute;
+    max-height: 230px;
 
     @media screen and (max-width: 768px) {
         height: 25%;
     }
+    @media screen and (max-height: 768px) {
+        height: 30%;
+    }
+    
 }
 
 .background-color {

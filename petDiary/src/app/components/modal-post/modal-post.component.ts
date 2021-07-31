@@ -24,6 +24,8 @@ export class ModalPostComponent implements OnInit {
     this.editor = new Editor();
 
   }
+  ngOnInit(): void {}
+
 
   @HostListener('window:resize', ['$event'])
 
@@ -39,6 +41,9 @@ export class ModalPostComponent implements OnInit {
     this.dialogRef.close(this.form.get("editorNameForm")?.value);
   }
 
-  ngOnInit(): void {}
+  closeModal(): void {
+    this.dialogRef.close();
+  }
+
 
 }

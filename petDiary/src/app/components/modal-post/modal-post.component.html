@@ -10,7 +10,7 @@
         <div class="row mt-3" (window:resize)="onResize($event)">
             <div class="col-12">
                 <button (click)="savePost()" class="btn btn-primary c-form__container__button-form float-end"  type="submit">Post it!</button>
-                <a class="link-primary c-form__container__button-link float-end me-3 mt-1">Cancel</a>
+                <a (click)="closeModal()" class="link-primary c-form__container__button-link float-end me-3 mt-1">Cancel</a>
             </div>
         </div>
     </form>
