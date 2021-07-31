@@ -12,8 +12,6 @@ export class PostsTableComponent implements OnInit {
 
   @Input() list: any;
 
-  ngOnInit(): void {
-    console.log(this.list)
-  }
+  ngOnInit(): void {}
 
 }

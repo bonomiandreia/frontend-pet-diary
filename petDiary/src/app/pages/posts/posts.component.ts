@@ -29,12 +29,8 @@ export class PostsComponent implements OnInit {
   }
 
   openDialogPosts(): void {
-    const dialogRef = this.dialog.open(ModalPostComponent, {
-      height: '40%',
-        width: '60%'
-    });
-
-    console.log('here')
+    const dialogRef = this.dialog.open(ModalPostComponent, {panelClass: 'full-width-dialog'}
+    );
 
     dialogRef.afterClosed().subscribe(result => {
       this.dialogRef = null;

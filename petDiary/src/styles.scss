@@ -2,10 +2,15 @@
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 
 .material-icons {
     font-family: 'Material Icons' !important;
+}
+
+.full-width-dialog .mat-dialog-container {
+    max-width: 100vw !important;
 }
 
 .background-paws {
