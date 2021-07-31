@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'petDiary';
+  isMobile: boolean;
+
+  @HostListener('window:resize', ['$event'])
+
+  onResize(event) {
+    event?.target?.innerWidth < 768 ? this.isMobile = true : this.isMobile = false;
+    console.log(this.isMobile)
+  }
 }
