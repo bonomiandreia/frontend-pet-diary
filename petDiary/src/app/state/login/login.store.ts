@@ -17,7 +17,7 @@ export function createInitialState(): LoginState {
       _id: '',
     email: '',
     },
-    token: ''
+    token: '',
   };
 }
 

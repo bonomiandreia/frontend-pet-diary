@@ -38,6 +38,10 @@ export class ModalPostComponent implements OnInit {
 
 
   savePost(): void {
+    if (this.form.invalid) {
+      return;
+    }
+    
     this.dialogRef.close(this.form.get("editorNameForm")?.value);
   }
 
