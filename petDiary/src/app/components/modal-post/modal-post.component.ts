@@ -26,12 +26,13 @@ export class ModalPostComponent implements OnInit {
   }
 
   @HostListener('window:resize', ['$event'])
-    onResize(event) {
-      event?.target?.innerWidth < 768 ? this.isMobile = true : this.isMobile = false
-      if (this.isMobile) {
-        this.form.controls.editorNameForm.setValue(null);
-      }
+  
+  onResize(event) {
+    event?.target?.innerWidth < 768 ? this.isMobile = true : this.isMobile = false
+    if (this.isMobile) {
+      this.form.controls.editorNameForm.setValue(null);
     }
+  }
 
 
   savePost(): void {

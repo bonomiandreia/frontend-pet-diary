@@ -21,6 +21,17 @@ export class PostsService {
 
   getPostsById(idUser: string) {
     this.http.get<Posts[]>(`${environment.url}posts/${idUser}`).subscribe((data: Posts[]) => {
+     this.setPosts(data);
+    }) 
+  }
+
+  postAddPost(content: string, idUser: string) {
+    const body = {
+      text: content,
+      date: Date.now(),
+      idUser: idUser,
+    }
+    this.http.post<Posts[]>(`${environment.url}posts/create`, body).subscribe((data: Posts[]) => {
       this.setPosts(data);
     })
   }
