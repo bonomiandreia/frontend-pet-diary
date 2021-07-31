@@ -24,7 +24,6 @@ export class ModalPostComponent implements OnInit {
 
     this.editor = new Editor();
     this.isMobile = this.query.getValue().isMobile;
-    console.log(this.isMobile)
 
   }
   ngOnInit(): void {}

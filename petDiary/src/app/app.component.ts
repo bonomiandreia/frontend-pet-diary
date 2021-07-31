@@ -16,8 +16,8 @@ export class AppComponent {
 
   @HostListener('window:resize', ['$event'])
 
-  onResize(event) {
-    event?.target?.innerWidth < 768 ? this.isMobile = true : this.isMobile = false;
+  onResize() {
+    window.innerWidth < 768 ? this.isMobile = true : this.isMobile = false;
     this.layout.updateScreen(this.isMobile)
   }
 }
