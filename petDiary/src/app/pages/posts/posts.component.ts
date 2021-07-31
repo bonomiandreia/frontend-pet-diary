@@ -33,9 +33,9 @@ export class PostsComponent implements OnInit {
     );
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result)
-      this.service.postAddPost(result, this.id);
-      this.dialogRef = null;
+      if (result) {
+        this.service.postAddPost(result, this.id);
+      }
     });
   }
 

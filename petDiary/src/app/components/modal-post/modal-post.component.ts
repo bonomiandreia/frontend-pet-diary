@@ -26,7 +26,7 @@ export class ModalPostComponent implements OnInit {
   }
 
   @HostListener('window:resize', ['$event'])
-  
+
   onResize(event) {
     event?.target?.innerWidth < 768 ? this.isMobile = true : this.isMobile = false
     if (this.isMobile) {
@@ -36,7 +36,6 @@ export class ModalPostComponent implements OnInit {
 
 
   savePost(): void {
-    console.log(this.form.get("editorNameForm")?.value);
     this.dialogRef.close(this.form.get("editorNameForm")?.value);
   }
 

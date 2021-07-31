@@ -10,7 +10,7 @@
 }
 
 .full-width-dialog .mat-dialog-container {
-    width: 100vw !important;
+    max-width: 100vw !important;
 
     @media screen and (max-width: 768px) {
         width: 300px !important;
