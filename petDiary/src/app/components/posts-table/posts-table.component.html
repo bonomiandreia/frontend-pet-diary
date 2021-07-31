@@ -9,8 +9,6 @@
             </div>
     </div>  
     <div class="row mt-2">
-        <div class="col-12">
-            {{ item.text }}
-        </div>
+        <div class="col-12" [innerHTML]="item.text"></div>
     </div>
 </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Validators, FormGroup, FormBuilder } from '@angular/forms';
+import { Editor, toDoc, toHTML  } from 'ngx-editor';
 
 @Component({
   selector: 'app-modal-post',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModalPostComponent implements OnInit {
 
-  constructor() { }
+  form: FormGroup;
+  editor: Editor;
+  test: string;
 
-  ngOnInit(): void {
-  }
+  constructor(private fb: FormBuilder ) {
+    this.form = this.fb.group({
+      editorNameForm: ['', Validators.compose([Validators.required])],
+    });
+
+    this.editor = new Editor();
+
+   }
+
+    savePost(): void {
+      console.log(this.form.get("editor")?.value);
+    }
+
+  ngOnInit(): void {}
 
 }

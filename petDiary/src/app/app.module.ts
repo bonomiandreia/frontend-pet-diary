@@ -9,6 +9,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TokenInterceptor } from './interceptor/token-interceptor';
 import { AuthGuardService } from './auth/auth.service';
+import { NgxEditorModule } from 'ngx-editor';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { AuthGuardService } from './auth/auth.service';
     HttpClientModule,
     BrowserAnimationsModule,
     NgbModule,
+    NgxEditorModule,
     
   ],
   providers: [

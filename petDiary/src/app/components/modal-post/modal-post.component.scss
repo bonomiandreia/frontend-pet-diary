@@ -1,0 +1,12 @@
+.c-modal {
+    background-color:white;
+    box-shadow: 5px 5px 15px 5px rgb(117 115 115 / 15%);
+    width: 500px;
+    height: 500px;
+    max-width: 300px;
+
+    &__write-here {
+        
+        background-color: white;
+    } 
+}

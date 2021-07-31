@@ -1,7 +1,7 @@
 <app-header></app-header>
 <div class="container mt-5">
     <mat-card class="c-posts">
-        <div class="row ms-3 me-3">
+        <div class="row ms-3 me-3" (click)="openDialogPosts()" >
             <input class="background-form mt-3" placeholder="Write about your pet here..."/>
         </div>
         <app-posts-table [list]="posts$ | async"></app-posts-table>

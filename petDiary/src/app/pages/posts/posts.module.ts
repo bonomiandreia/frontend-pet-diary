@@ -11,6 +11,8 @@ import { PostsPageRoutingModule } from './posts-routing.module';
 import { MatIconModule } from '@angular/material/icon'
 import { PostsTableComponent } from '../../components/posts-table/posts-table.component';
 import { NgxEditorModule } from 'ngx-editor';
+import { ModalPostComponent } from '../../components/modal-post/modal-post.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
     imports: [
@@ -22,11 +24,14 @@ import { NgxEditorModule } from 'ngx-editor';
         PostsPageRoutingModule,
         MatIconModule,
         NgxEditorModule,
+        MatCardModule,
+        MatDialogModule,
     ],
     declarations: [
       PostsComponent,
       HeaderComponent,
       PostsTableComponent,
+      ModalPostComponent,
     ],
     exports: [PostsComponent,
       MatIconModule],
