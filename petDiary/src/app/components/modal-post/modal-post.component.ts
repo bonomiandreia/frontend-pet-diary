@@ -12,6 +12,7 @@ export class ModalPostComponent implements OnInit {
 
   form: FormGroup;
   editor: Editor;
+  isMobile: boolean;
 
   
 
@@ -26,13 +27,16 @@ export class ModalPostComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
     onResize(event) {
-      console.log(event.target.innerWidth);
+      event?.target?.innerWidth < 768 ? this.isMobile = true : this.isMobile = false
+      if (this.isMobile) {
+        this.form.controls.editorNameForm.setValue(null);
+      }
     }
 
 
   savePost(): void {
-    console.log(this.form.get("editor")?.value);
-    this.dialogRef.close(this.form.get("editor")?.value);
+    console.log(this.form.get("editorNameForm")?.value);
+    this.dialogRef.close(this.form.get("editorNameForm")?.value);
   }
 
   ngOnInit(): void {}

@@ -1,17 +1,16 @@
 
-<ng-template>
     <form [formGroup]="form" >
-        <div class="editor">
+        <div class="editor" *ngIf="!isMobile">
             <ngx-editor-menu [editor]="editor">
             </ngx-editor-menu>
             <ngx-editor [editor]="editor" formControlName="editorNameForm">
             </ngx-editor>
         </div>
-        <div class="row mt-3">
+        <textarea *ngIf="isMobile" formControlName="editorNameForm"></textarea>
+        <div class="row mt-3" (window:resize)="onResize($event)">
             <div class="col-12">
-                <button class="btn btn-primary c-form__container__button-form float-end"  type="submit">Post it!</button>
+                <button (click)="savePost()" class="btn btn-primary c-form__container__button-form float-end"  type="submit">Post it!</button>
                 <a class="link-primary c-form__container__button-link float-end me-3 mt-1">Cancel</a>
             </div>
         </div>
     </form>
-</ng-template>
