@@ -1,13 +1,13 @@
 .c-modal {
-    // background-color:white;
     box-shadow: 0;
     height: 90%
-    // width: 500px;
-    // height: 500px;
-    // max-width: 300px;
 
     &__write-here {
         
         background-color: white;
     } 
+}
+
+textarea {
+    width: 100%;
 }

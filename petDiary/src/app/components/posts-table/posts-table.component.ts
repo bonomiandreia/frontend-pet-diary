@@ -10,7 +10,7 @@ export class PostsTableComponent implements OnInit {
 
   constructor() {}
 
-  @Input() list: any;
+  @Input() list: Posts[];
 
   ngOnInit(): void {}
 
