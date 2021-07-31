@@ -1,9 +1,12 @@
 # PetDiary
 
-Angular
-Node.js
-Bootstrap
+Angular /
+Node.js /
+Bootstrap /
 Akita
+
+
+
 
 ## Development server
 
@@ -19,6 +22,27 @@ node app.js
 user: "doesntexist@gmail.com",
 
 password: "loren"
+
+## Screens:
+
+Login:
+
+<img src="https://user-images.githubusercontent.com/39713034/127728308-a933fa63-84fb-46bc-9c34-b1dd278fa3e0.png" width="60%" height="60%"/>
+
+Create account:
+
+<img src="https://user-images.githubusercontent.com/39713034/127728317-6a5f5265-92fe-4711-81cf-45e9024912c0.png" width="60%" height="60%"/>
+
+Posts list:
+
+<img src="https://user-images.githubusercontent.com/39713034/127728323-a2cc9c1b-bba9-443a-98eb-8d980ad9fe20.png" width="60%" height="60%"/>
+
+Modal:
+
+<img src="https://user-images.githubusercontent.com/39713034/127728329-5092adbd-6fa5-4b57-9466-4706c6fc754b.png" width="60%" height="60%"/>
+
+
+
 
 ## Code scaffolding
 
