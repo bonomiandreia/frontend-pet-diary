@@ -9,7 +9,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TokenInterceptor } from './interceptor/token-interceptor';
 import { AuthGuardService } from './auth/auth.service';
-import { NgxEditorModule } from 'ngx-editor';
+import { LayoutService } from './state/layout/layout.service';
+import { LayoutStore } from './state/layout/layout.store';
 
 
 @NgModule({
@@ -23,11 +24,12 @@ import { NgxEditorModule } from 'ngx-editor';
     HttpClientModule,
     BrowserAnimationsModule,
     NgbModule,
-    NgxEditorModule,
     
   ],
   providers: [
     AuthGuardService,
+    LayoutService,
+    LayoutStore,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
