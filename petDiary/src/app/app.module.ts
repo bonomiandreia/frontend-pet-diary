@@ -11,11 +11,7 @@ import { TokenInterceptor } from './interceptor/token-interceptor';
 import { AuthGuardService } from './auth/auth.service';
 import { LayoutService } from './state/layout/layout.service';
 import { LayoutStore } from './state/layout/layout.store';
-import { MatSnackBarConfig, MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
-
-
-const config = new MatSnackBarConfig();
-config.panelClass = ['snack-bar-style'];
+import {  MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
