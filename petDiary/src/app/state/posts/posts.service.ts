@@ -30,10 +30,7 @@ export class PostsService {
         this.setPosts(data)
       },
       (error) => { 
-        this.snackBar.open(error.error, '', {
-          duration: 2000,
-          panelClass: ['snack-bar-style']
-        })
+        this.snackBar.open(error.error)
       },
     );
   }
@@ -49,14 +46,10 @@ export class PostsService {
     .subscribe(
       (data: Posts[]) => { 
         this.setPosts(data)
-        this.snackBar.open('Saved successfully!', '', {
-          duration: 2000,
-        })
+        this.snackBar.open('Saved successfully!')
       },
       (error) => { 
-        this.snackBar.open(error.error, '', {
-          duration: 2000,
-        })
+        this.snackBar.open(error.error)
       },
     );
   }
