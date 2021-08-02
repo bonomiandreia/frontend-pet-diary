@@ -18,6 +18,7 @@ export class LoginService {
   constructor(private loginStore: LoginStore, private http: HttpClient, private router: Router) { }
 
   setLogin(data: LoginState): void {
+    this.router.navigate(['/posts']);
     this.loginStore.update(data);
   }
 
@@ -26,12 +27,10 @@ export class LoginService {
   }
 
   login(body: Login): void {
-    this.http.post<LoginResponse>(`${environment.url}users/auth`, {...body, ignore_interceptor: true } ).subscribe((data: LoginResponse) => {
-      this.setLogin(data);
-      this.router.navigate(['/posts']);
-    }, error => {
-      return error.error;
-    })
+    this.http.post<LoginResponse>(`${environment.url}users/auth`, {...body, ignore_interceptor: true }).subscribe(
+        (data: LoginResponse) => this.setLogin(data),
+        error => console.log(error),
+    );
     
   }
 
