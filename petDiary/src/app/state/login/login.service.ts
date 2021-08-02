@@ -23,8 +23,8 @@ export class LoginService {
 
   setLogin(data: LoginState): void {
     if (data.token !== '') {
-      this.router.navigate(['/posts']);
       this.loginStore.update(data);
+      this.router.navigate(['/posts']);
     }
 
   }
