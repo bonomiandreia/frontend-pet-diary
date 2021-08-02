@@ -5,6 +5,7 @@ import { environment } from '../../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 /**
  * Posts service
@@ -56,9 +57,6 @@ export class PostsService {
 
   deletePostsById(idPost: string, idUser: string): void {
     const options = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-      }),
       body: {
         idUser: idUser,
       },
