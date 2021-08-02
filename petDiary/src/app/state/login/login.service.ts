@@ -7,6 +7,7 @@ import { Login } from '../../models/login.model';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { resetStores } from '@datorama/akita';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
 /**
  * Login service
@@ -14,6 +15,7 @@ import { resetStores } from '@datorama/akita';
  * @export
  * @class LoginService
  */
+ @UntilDestroy()
 @Injectable({ providedIn: 'root' })
 export class LoginService {
 
@@ -32,16 +34,18 @@ export class LoginService {
   }
 
   login(body: Login): void {
-    this.http.post<LoginResponse>(`${environment.url}users/auth`, {...body, ignore_interceptor: true }).subscribe(
-        (data: LoginResponse) => { 
-          this.setLogin(data)
-        },
-        (error) => { 
-          this.snackBar.open(error.error, '', {
-            duration: 2000
-          })
-          resetStores();
-        },
+    this.http.post<LoginResponse>(`${environment.url}users/auth`, {...body, ignore_interceptor: true })
+    .pipe(untilDestroyed(this))
+    .subscribe(
+      (data: LoginResponse) => { 
+        this.setLogin(data)
+      },
+      (error) => { 
+        this.snackBar.open(error.error, '', {
+          duration: 2000
+        })
+        resetStores();
+      },
     );
     
   }

@@ -3,6 +3,7 @@ import { PostsStore, PostsState } from './posts.store';
 import { Posts } from '../../models/posts.list.model';
 import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
 /**
  * Posts service
@@ -10,6 +11,7 @@ import { HttpClient } from '@angular/common/http';
  * @export
  * @class PostsService
  */
+ @UntilDestroy()
 @Injectable({ providedIn: 'root' })
 export class PostsService {
 
@@ -31,7 +33,7 @@ export class PostsService {
       date: Date.now(),
       idUser: idUser,
     }
-    this.http.post<Posts[]>(`${environment.url}posts/create`, body).subscribe((data: Posts[]) => {
+    this.http.post<Posts[]>(`${environment.url}posts/create`, body).pipe(untilDestroyed(this)).subscribe((data: Posts[]) => {
       this.setPosts(data);
     })
   }
