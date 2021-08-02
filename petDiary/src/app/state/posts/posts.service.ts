@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { PostsStore, PostsState } from './posts.store';
 import { Posts } from '../../models/posts.list.model';
 import { environment } from '../../../environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -47,6 +47,27 @@ export class PostsService {
       (data: Posts[]) => { 
         this.setPosts(data)
         this.snackBar.open('Saved successfully!')
+      },
+      (error) => { 
+        this.snackBar.open(error.error)
+      },
+    );
+  }
+
+  deletePostsById(idPost: string, idUser: string): void {
+    const options = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+      body: {
+        idUser: idUser,
+      },
+    };
+    this.http.delete(`${environment.url}posts/delete/${idPost}`, options).subscribe(
+      (data: Posts[]) => { 
+        this.setPosts(data)
+        console.log(data)
+        this.snackBar.open('deleted successfully!')
       },
       (error) => { 
         this.snackBar.open(error.error)
