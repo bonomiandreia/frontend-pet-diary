@@ -5,6 +5,8 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { Login } from '../../models/login.model';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { resetStores } from '@datorama/akita';
 
 /**
  * Login service
@@ -15,7 +17,7 @@ import { Router } from '@angular/router';
 @Injectable({ providedIn: 'root' })
 export class LoginService {
 
-  constructor(private loginStore: LoginStore, private http: HttpClient, private router: Router) { }
+  constructor(private snackBar: MatSnackBar, private loginStore: LoginStore, private http: HttpClient, private router: Router) { }
 
   setLogin(data: LoginState): void {
     this.router.navigate(['/posts']);
@@ -28,8 +30,15 @@ export class LoginService {
 
   login(body: Login): void {
     this.http.post<LoginResponse>(`${environment.url}users/auth`, {...body, ignore_interceptor: true }).subscribe(
-        (data: LoginResponse) => this.setLogin(data),
-        error => console.log(error),
+        (data: LoginResponse) => { 
+          this.setLogin(data)
+        },
+        (error) => { 
+          this.snackBar.open(error.error, '', {
+            duration: 2000
+          })
+          resetStores();
+        },
     );
     
   }

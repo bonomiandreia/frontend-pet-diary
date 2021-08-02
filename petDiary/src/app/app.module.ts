@@ -11,6 +11,8 @@ import { TokenInterceptor } from './interceptor/token-interceptor';
 import { AuthGuardService } from './auth/auth.service';
 import { LayoutService } from './state/layout/layout.service';
 import { LayoutStore } from './state/layout/layout.store';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 
 @NgModule({
@@ -23,6 +25,7 @@ import { LayoutStore } from './state/layout/layout.store';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MatSnackBarModule,
     NgbModule,
     
   ],
