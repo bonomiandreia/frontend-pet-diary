@@ -51,13 +51,11 @@ export class PostsService {
         this.setPosts(data)
         this.snackBar.open('Saved successfully!', '', {
           duration: 2000,
-          panelClass: ['snack-bar-style']
         })
       },
       (error) => { 
         this.snackBar.open(error.error, '', {
           duration: 2000,
-          panelClass: ['snack-bar-style']
         })
       },
     );

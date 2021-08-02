@@ -11,9 +11,11 @@ import { TokenInterceptor } from './interceptor/token-interceptor';
 import { AuthGuardService } from './auth/auth.service';
 import { LayoutService } from './state/layout/layout.service';
 import { LayoutStore } from './state/layout/layout.store';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSnackBarConfig, MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 
 
+const config = new MatSnackBarConfig();
+config.panelClass = ['snack-bar-style'];
 
 @NgModule({
   declarations: [
@@ -33,6 +35,12 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     AuthGuardService,
     LayoutService,
     LayoutStore,
+    { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, 
+      useValue: { 
+        duration: 2000, 
+        panelClass: ['snack-bar-style']
+      }
+    },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,

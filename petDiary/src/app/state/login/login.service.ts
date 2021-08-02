@@ -41,10 +41,7 @@ export class LoginService {
         this.setLogin(data)
       },
       (error) => { 
-        this.snackBar.open(error.error, '', {
-          duration: 2000,
-          panelClass: ['snack-bar-style']
-        })
+        this.snackBar.open(error.error)
         resetStores();
       },
     );
