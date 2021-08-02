@@ -10,6 +10,6 @@
         </div>
     </div>  
     <div class="row ms-3 me-3 mt-2">
-        <div class="col-12" [innerHTML]="item.text"></div>
+        <div class="col-12" [innerHTML]="item.text | sanitizer"></div>
     </div>
 </div>

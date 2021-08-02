@@ -13,27 +13,32 @@ import { PostsTableComponent } from '../../components/posts-table/posts-table.co
 import { NgxEditorModule } from 'ngx-editor';
 import { ModalPostComponent } from '../../components/modal-post/modal-post.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { PipeModulePipe } from '../../pipes/pipe-module.pipe';
 
 @NgModule({
     imports: [
-        CommonModule,
-        MatTableModule,
-        MatCardModule,
-        MatGridListModule,
-        ReactiveFormsModule,
-        PostsPageRoutingModule,
-        MatIconModule,
-        NgxEditorModule,
-        MatCardModule,
-        MatDialogModule,
+      CommonModule,
+      MatTableModule,
+      MatCardModule,
+      MatGridListModule,
+      ReactiveFormsModule,
+      PostsPageRoutingModule,
+      MatIconModule,
+      NgxEditorModule,
+      MatCardModule,
+      MatDialogModule,
     ],
     declarations: [
       PostsComponent,
       HeaderComponent,
       PostsTableComponent,
       ModalPostComponent,
+      PipeModulePipe
     ],
     exports: [PostsComponent,
       MatIconModule],
+    providers: [
+      PipeModulePipe,
+    ]
 })
 export class LoginAccountModule {}
