@@ -20,7 +20,7 @@ export class PostsTableComponent implements OnInit {
   @Input() list: Posts[];
 
   delete(id: string): void {
-    //testing
+    //testing, output after father component
     this.service.deletePostsById(id, this.idUser)
   }
 
