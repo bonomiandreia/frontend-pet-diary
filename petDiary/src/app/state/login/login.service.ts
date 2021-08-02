@@ -20,8 +20,11 @@ export class LoginService {
   constructor(private snackBar: MatSnackBar, private loginStore: LoginStore, private http: HttpClient, private router: Router) { }
 
   setLogin(data: LoginState): void {
-    this.router.navigate(['/posts']);
-    this.loginStore.update(data);
+    if (data.token !== '') {
+      this.router.navigate(['/posts']);
+      this.loginStore.update(data);
+    }
+
   }
 
   deleteLogin(): void {
