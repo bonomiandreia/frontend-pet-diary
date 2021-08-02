@@ -14,13 +14,13 @@
                     <div class="row">
                         <input [ngClass]="displayCssFor('email')" class="mt-3 background-form background-color" id="email" formControlName="email" placeholder="Email*"/>
                         <div class="text-danger text-start" *ngIf="form.get('email')?.touched && form.get('email')?.invalid">
-                            email is required.
+                            Email is required.
                         </div>
                     </div>
                     <div class="row">
                         <input [ngClass]="displayCssFor('password')" class="mt-3 background-form background-color" formControlName="password" type="Password" placeholder="Password*"/>
                         <div class="text-danger text-start" *ngIf="form.get('password')?.touched && form.get('password')?.invalid">
-                            password is required.
+                            Password is required.
                         </div>
                     </div>
                     <div class="row">

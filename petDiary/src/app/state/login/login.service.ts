@@ -48,6 +48,14 @@ export class LoginService {
     
   }
 
+  create(body: Login): void {
+    this.http.post(`${environment.url}users/create`, {...body, ignore_interceptor: true })
+    .pipe(untilDestroyed(this))
+    .subscribe(() => {
+      this.snackBar.open('create account successfully!!')
+    })
+  }
+
   logout(): void {
     this.deleteLogin();
   }
