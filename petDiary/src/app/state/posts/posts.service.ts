@@ -66,7 +66,6 @@ export class PostsService {
     this.http.delete(`${environment.url}posts/delete/${idPost}`, options).subscribe(
       (data: Posts[]) => { 
         this.setPosts(data)
-        console.log(data)
         this.snackBar.open('deleted successfully!')
       },
       (error) => { 
