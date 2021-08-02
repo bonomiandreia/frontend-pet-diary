@@ -21,19 +21,23 @@ export class PostsService {
     this.postsStore.setPosts(data)
   }
 
-  getPostsById(idUser: string) {
-    this.http.get<Posts[]>(`${environment.url}posts/${idUser}`).subscribe((data: Posts[]) => {
+  getPostsById(idUser: string): void {
+    this.http.get<Posts[]>(`${environment.url}posts/${idUser}`)
+    .pipe(untilDestroyed(this))
+    .subscribe((data: Posts[]) => {
      this.setPosts(data);
     }) 
   }
 
-  postAddPost(content: string, idUser: string) {
+  postAddPost(content: string, idUser: string): void {
     const body = {
       text: content,
       date: Date.now(),
       idUser: idUser,
     }
-    this.http.post<Posts[]>(`${environment.url}posts/create`, body).pipe(untilDestroyed(this)).subscribe((data: Posts[]) => {
+    this.http.post<Posts[]>(`${environment.url}posts/create`, body)
+    .pipe(untilDestroyed(this))
+    .subscribe((data: Posts[]) => {
       this.setPosts(data);
     })
   }
