@@ -33,7 +33,7 @@ export class PostsComponent implements OnInit {
   }
 
   openDialogPosts(): void {
-    const dialogRef = this.dialog.open(ModalPostComponent, {panelClass: 'full-width-dialog'}
+    const dialogRef = this.dialog.open(ModalPostComponent, { panelClass: 'full-width-dialog' }
     );
 
     dialogRef.afterClosed().subscribe(result => {
