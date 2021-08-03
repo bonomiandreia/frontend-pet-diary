@@ -12,7 +12,7 @@ import { LoginQuery } from '../../state/login/login.query';
 export class PostsTableComponent implements OnInit {
 
   idUser: string;
-  @Output() deleteEmployee = new EventEmitter<string>();
+  @Output() deleteItem = new EventEmitter<string>();
 
   constructor(private service: PostsService, private query: LoginQuery) {
     this.idUser = this.query.getValue().auth._id;
@@ -21,9 +21,7 @@ export class PostsTableComponent implements OnInit {
   @Input() list: Posts[];
 
   delete(id: string): void {
-    //testing, output after father component
-    this.deleteEmployee.emit(id)
-    //this.service.deletePostsById(id, this.idUser)
+    this.deleteItem.emit(id)
   }
 
   ngOnInit(): void {}

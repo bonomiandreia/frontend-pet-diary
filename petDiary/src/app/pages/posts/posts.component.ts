@@ -28,7 +28,7 @@ export class PostsComponent implements OnInit {
     this.service.getPostsById(this.id);
   }
 
-  deleteEmployee(idPost: string): void {
+  deletePost(idPost: string): void {
     this.service.deletePostsById(idPost, this.id);
   }
 
