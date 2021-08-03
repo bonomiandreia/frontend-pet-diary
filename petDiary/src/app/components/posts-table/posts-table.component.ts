@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 import { StringifyOptions } from 'querystring';
 import { Posts } from '../../models/posts.list.model';
 import { PostsService } from '../../state/posts/posts.service';
@@ -11,7 +11,8 @@ import { LoginQuery } from '../../state/login/login.query';
 })
 export class PostsTableComponent implements OnInit {
 
-  idUser: string
+  idUser: string;
+  @Output() deleteEmployee = new EventEmitter<string>();
 
   constructor(private service: PostsService, private query: LoginQuery) {
     this.idUser = this.query.getValue().auth._id;
@@ -21,7 +22,8 @@ export class PostsTableComponent implements OnInit {
 
   delete(id: string): void {
     //testing, output after father component
-    this.service.deletePostsById(id, this.idUser)
+    this.deleteEmployee.emit(id)
+    //this.service.deletePostsById(id, this.idUser)
   }
 
   ngOnInit(): void {}

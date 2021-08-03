@@ -19,13 +19,17 @@ export class PostsComponent implements OnInit {
   text!: string;
 
 
-  constructor(public dialog: MatDialog, private queryLogin: LoginQuery, private service: PostsService, private queryPosts: PostsQuery) { 
+  constructor(public dialog: MatDialog, private queryLogin: LoginQuery, private service: PostsService, private queryPosts: PostsQuery, private servicePosts: PostsService,) { 
     this.id = this.queryLogin.getValue().auth._id;
     this.posts$ = this.queryPosts.posts$;
   }
 
   ngOnInit(): void {
     this.service.getPostsById(this.id);
+  }
+
+  deleteEmployee(idPost: string): void {
+    this.service.deletePostsById(idPost, this.id);
   }
 
   openDialogPosts(): void {

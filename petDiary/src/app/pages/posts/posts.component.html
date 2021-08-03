@@ -5,6 +5,7 @@
             <input type="text" disabled="disabled" class="background-form mt-3 c-posts__white-here cursor" placeholder="Write about your pet here..."/>
         </div>
         <app-posts-table 
+        (deleteEmployee)="deleteEmployee($event)"
         [list]="posts$ | async"
         *ngIf="(posts$| async)?.length > 0; else noPosts"
         >
