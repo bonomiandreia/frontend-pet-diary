@@ -1,6 +1,6 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component,  OnInit } from '@angular/core';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
-import { Editor, toDoc, toHTML  } from 'ngx-editor';
+import { Editor  } from 'ngx-editor';
 import { MatDialogRef } from '@angular/material/dialog';
 import { LayoutQuery } from '../../state/layout/layout.query';
 
@@ -16,7 +16,6 @@ export class ModalPostComponent implements OnInit {
   isMobile: boolean;
 
   
-
   constructor(private query: LayoutQuery, private fb: FormBuilder, public dialogRef: MatDialogRef<ModalPostComponent> ) {
     this.form = this.fb.group({
       editorNameForm: ['', Validators.compose([Validators.required])],

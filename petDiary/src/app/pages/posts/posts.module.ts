@@ -35,8 +35,7 @@ import { PipeModulePipe } from '../../pipes/pipe-module.pipe';
       ModalPostComponent,
       PipeModulePipe
     ],
-    exports: [PostsComponent,
-      MatIconModule],
+    exports: [PostsComponent],
     providers: [
       PipeModulePipe,
     ]

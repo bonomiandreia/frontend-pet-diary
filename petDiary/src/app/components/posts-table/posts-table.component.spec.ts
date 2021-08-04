@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PostsTableComponent } from './posts-table.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
 
 describe('PostsTableComponent', () => {
   let component: PostsTableComponent;
@@ -8,7 +11,12 @@ describe('PostsTableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PostsTableComponent ]
+      declarations: [ PostsTableComponent ],
+      imports: [
+        MatDialogModule,
+        MatSnackBarModule,
+        HttpClientModule
+      ]
     })
     .compileComponents();
   });

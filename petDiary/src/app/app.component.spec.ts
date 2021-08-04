@@ -1,16 +1,26 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { LayoutStore } from './state/layout/layout.store';
+import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatIconModule } from '@angular/material/icon';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+      RouterTestingModule,
+      MatIconModule
       ],
       declarations: [
         AppComponent
       ],
+      providers: [
+        LayoutStore,
+        HttpClientModule,
+        { provide: MatSnackBar, useValue: { open: () => '' } },
+      ]
     }).compileComponents();
   });
 
@@ -26,10 +36,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('petDiary');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('petDiary app is running!');
-  });
 });

@@ -10,7 +10,7 @@ import { LoginPageRoutingModule } from './login-routing.module';
 
 @NgModule({
     imports: [
-      CommonModule,
+        CommonModule,
         MatTableModule,
         MatCardModule,
         MatGridListModule,

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { resetStores } from '@datorama/akita';
-import { LoginService } from '../../state/login/login.service';
 import { Router } from '@angular/router';
 import { LoginQuery } from '../../state/login/login.query';
 
