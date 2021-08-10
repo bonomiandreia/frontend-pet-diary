@@ -26,7 +26,7 @@ export class LayoutService {
     this.setClassMode(theme);
     const previousTheme = (theme === 'dark-mode' ? 'light-mode' : 'dark-mode');
     this.renderer.removeClass( document.body, previousTheme)
-    this.renderer.addClass(document.body, this.colorTheme);
+    this.renderer.addClass(document.body, theme);
 
   }
 
