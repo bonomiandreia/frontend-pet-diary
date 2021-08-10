@@ -7,6 +7,7 @@
             <div class="c-header__background--email">email: {{ email }}</div>
         </div>
         <div class="col-2 col-lg-6">
+            <mat-slide-toggle (click)="changeTheme()" [(ngModel)]="eventMode"></mat-slide-toggle>
             <mat-icon (click)="logout()" aria-hidden="false" class="c-header__background--logout cursor" aria-label="Example home icon">keyboard_tab</mat-icon>
         </div>
     </div>

@@ -10,12 +10,17 @@ import { LoginQuery } from '../../state/login/login.query';
 })
 export class HeaderComponent implements OnInit {
 
-  email: string
+  email: string;
+  eventMode: boolean;
 
   constructor(private query: LoginQuery, private router: Router) { }
 
   ngOnInit(): void {
     this.email = this.query.getValue().auth.email;
+  }
+
+  changeTheme(): void {
+    console.log(this.eventMode)
   }
 
   logout(): void {

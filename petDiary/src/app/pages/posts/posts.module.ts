@@ -1,7 +1,7 @@
 
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -14,6 +14,7 @@ import { NgxEditorModule } from 'ngx-editor';
 import { ModalPostComponent } from '../../components/modal-post/modal-post.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { PipeModulePipe } from '../../pipes/pipe-module.pipe';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle'
 
 @NgModule({
     imports: [
@@ -27,6 +28,8 @@ import { PipeModulePipe } from '../../pipes/pipe-module.pipe';
       NgxEditorModule,
       MatCardModule,
       MatDialogModule,
+      MatSlideToggleModule,
+      FormsModule,
     ],
     declarations: [
       PostsComponent,

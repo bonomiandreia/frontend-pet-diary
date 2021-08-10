@@ -51,6 +51,11 @@ $app-dark-theme: mat-dark-theme($mat-primary-palette, $mat-accent-palette);
     --color-font-primary: #434343;
     --background-paws: url('/assets/background.png');
     --gradient-background: linear-gradient( #10A0BC, #5A97BC);
+
+    body {
+        position: absolute;
+        background-color: white;
+    }
     
 }
 
@@ -61,6 +66,10 @@ $app-dark-theme: mat-dark-theme($mat-primary-palette, $mat-accent-palette);
     --color-font-primary: white;
     --background-paws: url('/assets/background-dark-mode.png');
     --gradient-background: linear-gradient( #0C5563, #214858);
+    
+    body {
+        background-color: black;
+    }
     
 }
 

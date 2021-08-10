@@ -12,6 +12,7 @@ import { AuthGuardService } from './auth/auth.service';
 import { LayoutService } from './state/layout/layout.service';
 import { LayoutStore } from './state/layout/layout.store';
 import {  MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
+;
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {  MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/mate
   ],
   imports: [
     BrowserModule,
+    
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,

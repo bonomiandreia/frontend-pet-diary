@@ -3,6 +3,7 @@ import { Store, StoreConfig } from '@datorama/akita';
 
 export interface LayoutState {
   isMobile: boolean;
+  mode: string,
 
 }
 /**
@@ -11,6 +12,7 @@ export interface LayoutState {
 export function createInitialState(): LayoutState {
   return {
     isMobile: false,
+    mode: 'light-mode',
   }
 }
 
@@ -32,5 +34,9 @@ export class LayoutStore extends Store<LayoutState> {
 
   updateScreen(data: boolean) {
     this.update({isMobile: data});
+  }
+
+  updateMode(data: string) {
+    this.update({mode: data});
   }
 }
