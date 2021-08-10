@@ -17,7 +17,7 @@
     height: 100%;
     --bg-primary: #294354;
     --color-font-primary: white;
-    --background-paws: url('/assets/background.png');
+    --background-paws: url('/assets/background-dark-mode.png');
     
   }
 
@@ -34,7 +34,7 @@
 }
 
 .background-paws {
-    background-image: url('/assets/background.png');
+    background-image: var(--background-paws);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
