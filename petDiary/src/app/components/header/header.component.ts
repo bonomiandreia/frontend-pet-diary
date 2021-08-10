@@ -13,7 +13,9 @@ export class HeaderComponent implements OnInit {
   email: string;
   eventMode: boolean;
 
-  constructor(private query: LoginQuery, private router: Router) { }
+  constructor(private query: LoginQuery, private router: Router) { 
+    this.eventMode = false;
+  }
 
   ngOnInit(): void {
     this.email = this.query.getValue().auth.email;
