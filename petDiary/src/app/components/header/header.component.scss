@@ -1,6 +1,6 @@
 .c-header {
     &__background {
-        background-image: linear-gradient( #10A0BC, #5A97BC);
+        background-image:  var(--gradient-background);
         color: white;
         padding: 2em;
         border-bottom-right-radius: 1em;

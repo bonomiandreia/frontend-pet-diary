@@ -3,19 +3,64 @@
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 
-:root {
+@import '~@angular/material/theming';
+@include mat-core();
+
+$mat-primary-scheme: (
+  100: #5a97bc,
+  500: #10a0bc,
+  700: #214858,
+  contrast: (
+    100: #214858,
+    500: #ffffff,
+    700: #ffffff,
+  )
+);
+$mat-accent-scheme: (
+  100: #ffe57f,
+  500: #ffd740,
+  700: #ffc400,
+  contrast: (
+    100: rgba(0,0,0,0.87),
+    500: rgba(0,0,0,0.87),
+    700: #ffffff,
+  )
+);
+$mat-primary-palette: mat-palette($mat-primary-scheme);
+$mat-accent-palette: mat-palette($mat-accent-scheme);
+
+$app-light-theme: mat-light-theme($mat-primary-palette, $mat-accent-palette);
+
+@include angular-material-theme($app-light-theme);
+
+$app-dark-theme: mat-dark-theme($mat-primary-palette, $mat-accent-palette);
+
+.dark-mode {
+  @include angular-material-theme($app-dark-theme);
+}
+
+.light-mode {
+    @include angular-material-theme($app-light-theme);
+}
+    
+
+:root .light-mode {
     height: 100%;
+    width: 100%;
     --bg-primary: #F4F4F4;
     --color-font-primary: #434343;
     --background-paws: url('/assets/background.png');
+    --gradient-background: linear-gradient( #10A0BC, #5A97BC);
     
 }
 
-:root .dark-theme {
+:root .dark-mode {
     height: 100%;
+    width: 100%;
     --bg-primary: #294354;
     --color-font-primary: white;
     --background-paws: url('/assets/background-dark-mode.png');
+    --gradient-background: linear-gradient( #0C5563, #214858);
     
 }
 
