@@ -4,8 +4,12 @@
 
     &__write-here {
         
-        background-color: white;
+        background-color: var(--bg-primary);
     } 
+}
+
+::ng-deep.mat-dialog-container {
+    background-color: var(--bg-primary);
 }
 
 textarea {
