@@ -2,8 +2,16 @@
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~@angular/material/theming';
+@include mat-core();
 
+$primary: mat-palette($mat-brown, 400);
+$accent:  mat-palette($mat-yellow, 100);
+$warn:    mat-palette($mat-deep-orange);
+$dark-theme:   mat-dark-theme($primary, $accent, $warn);
+
+
+@include angular-material-theme($dark-theme);
 
 :root {
     height: 100%;
@@ -19,14 +27,16 @@
     --color-font-primary: white;
     --background-paws: url('/assets/background-dark-mode.png');
     
-  }
+}
 
 .material-icons {
     font-family: 'Material Icons' !important;
 }
 
+
 .full-width-dialog .mat-dialog-container {
     max-width: 100vw !important;
+    padding: 0 !important;
 
     @media screen and (max-width: 768px) {
         width: 300px !important;
