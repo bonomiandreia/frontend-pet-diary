@@ -24,7 +24,6 @@ export class HeaderComponent implements OnInit {
   }
 
   changeTheme(): void {
-    console.log(this.eventMode )
     this.eventMode ? this.serviceLayout.updateTheme('dark-mode') : this.serviceLayout.updateTheme('light-mode');
   }
 

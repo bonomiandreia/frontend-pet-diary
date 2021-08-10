@@ -11,7 +11,9 @@ export class AppComponent {
   title = 'petDiary';
   isMobile: boolean;
 
-  constructor(private layout: LayoutService) { }
+  constructor(private layout: LayoutService, private serviceLayout: LayoutService) { 
+    this.serviceLayout.initTheme();
+  }
 
 
   @HostListener('window:resize', ['$event'])
