@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from '../../state/login/login.service';
+import { LoginQuery } from '../../state/login/login.query';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router, private loginService: LoginService) {
+  constructor(private fb: FormBuilder, private router: Router, private loginService: LoginService, private query: LoginQuery) {
     this.form = this.fb.group({
       email: ['', Validators.compose([Validators.email, Validators.required])],
       password: ['', Validators.compose([Validators.required])],
@@ -40,6 +41,12 @@ export class LoginComponent implements OnInit {
       password: this.form.get('password')?.value,
     }
     this.loginService.login(body);
+
+    this.query.isLogged$.subscribe(logged => {
+      if (logged) {
+        this.router.navigate(['/posts']);
+      }
+    })
 
     
   }

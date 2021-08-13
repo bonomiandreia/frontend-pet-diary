@@ -24,7 +24,6 @@ export class LoginService {
   setLogin(data: LoginState): void {
     if (data.token !== '') {
       this.loginStore.update(data);
-      this.router.navigate(['/posts']);
     }
 
   }

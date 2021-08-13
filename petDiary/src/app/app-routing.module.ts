@@ -11,7 +11,7 @@ export const ROUTES: Routes = [
     canLoad: [AuthGuard] 
   },
   { path: '**', redirectTo: '/login' },
-  { path: '', redirectTo: '/login' },
+  { path: '', pathMatch: 'full', redirectTo: '/login' },
 ];
 
 @NgModule({
