@@ -1,9 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
 
-/* Importing Bootstrap SCSS file. */
+@use '~@angular/material' as mat;
 @import '~bootstrap/scss/bootstrap';
 
 @import '~@angular/material/theming';
+
 @include mat-core();
 
 $mat-primary-scheme: (
@@ -71,6 +71,10 @@ $app-dark-theme: mat-dark-theme($mat-primary-palette, $mat-accent-palette);
         background-color: black;
     }
     
+}
+
+body, html {
+    font-family: Arial, Helvetica, sans-serif !important;
 }
 
 .material-icons {
@@ -162,6 +166,11 @@ a {
 
 input:focus {
     outline: none;
+}
+
+.title-pages {
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
 .background-form {

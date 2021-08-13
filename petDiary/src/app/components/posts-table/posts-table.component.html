@@ -1,10 +1,10 @@
 <div *ngFor="let item of list">
     <div class="row ms-3 me-3 mt-3">
-        <div class="col-6 border-bottom border-secondary">
-            <h2> {{ item?.date | date: 'dd.MM' }}</h2>
+        <div class="col-6 border-bottom border-secondary title-pages">
+            {{ item?.date | date: 'dd.MM' }}
         </div>
         <div class="col-6 ps-0 pe-0 border-bottom border-secondary">
-            <div class="float-end h3 cursor">
+            <div class="float-end cursor">
                 <mat-icon aria-hidden="false" (click)="delete(item._id)" aria-label="delete">delete</mat-icon>
             </div>
         </div>
