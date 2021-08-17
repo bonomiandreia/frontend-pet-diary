@@ -1,3 +1,7 @@
+
+
+
+
 # PetDiary
 
 Angular /
@@ -41,6 +45,8 @@ Modal:
 
 <img src="https://user-images.githubusercontent.com/39713034/127728329-5092adbd-6fa5-4b57-9466-4706c6fc754b.png" width="60%" height="60%"/>
 
+## dark / light mode:
+![Screen Recording 2021-08-17 at 12 16 16 PM](https://user-images.githubusercontent.com/39713034/129753912-5a668b6f-49f1-485e-ad8a-1f8e8dca4cc8.gif)
 
 
 
