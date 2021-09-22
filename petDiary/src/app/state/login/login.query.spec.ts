@@ -1,7 +1,7 @@
 import { LoginQuery } from './login.query';
 import { LoginStore } from './login.store';
 
-describe('AccountsQuery', () => {
+describe('LoginQuery', () => {
     let query: LoginQuery;
 
     beforeEach(() => {

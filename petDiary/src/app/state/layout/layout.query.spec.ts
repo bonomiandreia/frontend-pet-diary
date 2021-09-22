@@ -1,7 +1,7 @@
 import { LayoutQuery } from './layout.query';
 import { LayoutStore } from './layout.store';
 
-describe('AccountsQuery', () => {
+describe('LayoutQuery', () => {
     let query: LayoutQuery;
 
     beforeEach(() => {
