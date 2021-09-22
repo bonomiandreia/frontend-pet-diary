@@ -4,6 +4,10 @@ import { HeaderComponent } from './header.component';
 import { RouterModule } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MatIconModule } from '@angular/material/icon';
+import { LoginService } from '../../state/login/login.service';
+import { LayoutStore } from '../../state/layout/layout.store';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -15,7 +19,14 @@ describe('HeaderComponent', () => {
       imports: [
         RouterModule,
         RouterTestingModule,
-        MatIconModule
+        MatIconModule,
+        MatSlideToggleModule,
+        FormsModule,
+        ReactiveFormsModule,
+      ],
+      providers: [
+        LoginService,
+        LayoutStore,
       ],
     })
     .compileComponents();

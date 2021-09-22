@@ -3,7 +3,6 @@ import { resetStores } from '@datorama/akita';
 import { Router } from '@angular/router';
 import { LoginQuery } from '../../state/login/login.query';
 import { LayoutService } from '../../state/layout/layout.service';
-import { LayoutQuery } from 'src/app/state/layout/layout.query';
 
 @Component({
   selector: 'app-header',
@@ -15,7 +14,7 @@ export class HeaderComponent implements OnInit {
   email: string;
   eventMode: boolean;
 
-  constructor(private query: LoginQuery, private queryLayout: LayoutQuery, private router: Router, private serviceLayout: LayoutService) { 
+  constructor(private query: LoginQuery, private router: Router, private serviceLayout: LayoutService) { 
     this.eventMode = true;
     this.serviceLayout.initTheme();
   }

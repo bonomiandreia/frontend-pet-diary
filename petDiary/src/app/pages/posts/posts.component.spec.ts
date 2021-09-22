@@ -10,6 +10,9 @@ import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from '../../components/header/header.component';
 import { RouterTestingModule } from '@angular/router/testing';
+import { LayoutStore } from '../../state/layout/layout.store';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 describe('PostsComponent', () => {
@@ -19,9 +22,12 @@ describe('PostsComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
         declarations: [ PostsComponent, HeaderComponent],
-        imports: [ RouterTestingModule, MockModule(MatCardModule), MockModule(MatIconModule), MockModule(MatSnackBarModule), HttpClientModule],
-        providers: [
-        HttpClientTestingModule, MatSnackBar, 
+        imports: [  FormsModule,
+          ReactiveFormsModule,MatSlideToggleModule, RouterTestingModule, MockModule(MatCardModule), MockModule(MatIconModule), MockModule(MatSnackBarModule), HttpClientModule],
+      providers: [
+        HttpClientTestingModule, 
+        MatSnackBar, 
+        LayoutStore,
         { provide: MAT_DIALOG_DATA, useValue: {} },
         { provide: MatDialog, useValue: {} }
       ],
