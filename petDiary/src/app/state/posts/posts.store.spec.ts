@@ -1,6 +1,6 @@
 import { PostsStore } from './posts.store';
 
-describe('ReferrerUrlStore', () => {
+describe('PostsStore', () => {
     let store: PostsStore;
 
     beforeEach(() => {
