@@ -29,7 +29,7 @@ export class TokenInterceptor implements HttpInterceptor {
             setHeaders: {
             Accept: 'application/json',
             'Content-Type': 'application/json',
-            auth: `${this.token}`
+            auth: this.query.getValue().token
             }
         });
     
